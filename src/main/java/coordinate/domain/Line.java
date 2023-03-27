@@ -5,7 +5,7 @@ public class Line extends Figure {
     public static final int COORDINATE_SIZE = 2;
 
     public Line(Coordinates coordinates) {
-        super(coordinates);
+        super(coordinates, COORDINATE_SIZE);
     }
 
     @Override
