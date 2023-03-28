@@ -3,7 +3,6 @@ package coordinate.controller;
 import coordinate.domain.Coordinates;
 import coordinate.domain.Figure;
 import coordinate.domain.FigureMatch;
-import coordinate.domain.Result;
 import coordinate.view.InputView;
 import coordinate.view.OutputView;
 
@@ -24,7 +23,6 @@ public class CoordinateController {
         FigureMatch figureMatch = FigureMatch.matchFigure(coordinates.getCoordinateSize());
         Figure figure = figureMatch.create(coordinates);
 
-        Result result = new Result(figureMatch.getMessage(), figure.calculateArea());
-        outputView.printResult(result);
+        outputView.printResult(coordinates.getCoordinateSize(), figure.calculateArea());
     }
 }

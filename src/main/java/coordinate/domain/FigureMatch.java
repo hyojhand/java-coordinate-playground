@@ -5,15 +5,13 @@ import java.util.function.Function;
 
 public enum FigureMatch {
 
-    LINE(Line.COORDINATE_SIZE, "두 점 사이의 거리는 ",Line::new);
+    LINE(Line.COORDINATE_SIZE, Line::new);
 
     private final int coordinateSize;
-    private final String message;
     private final Function<Coordinates, Figure> figure;
 
-    FigureMatch(int coordinateSize, String message, Function<Coordinates, Figure> figure) {
+    FigureMatch(int coordinateSize, Function<Coordinates, Figure> figure) {
         this.coordinateSize = coordinateSize;
-        this.message = message;
         this.figure = figure;
     }
 
@@ -26,9 +24,5 @@ public enum FigureMatch {
 
     public Figure create(Coordinates coordinates) {
         return figure.apply(coordinates);
-    }
-
-    public String getMessage() {
-        return message;
     }
 }
