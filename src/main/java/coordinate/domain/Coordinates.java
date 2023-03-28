@@ -2,20 +2,13 @@ package coordinate.domain;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Coordinates {
 
     private final List<Coordinate> coordinates;
 
-    public Coordinates(List<String> coordinateValues) {
-        this.coordinates = mappingCoordinate(coordinateValues);
-    }
-
-    private List<Coordinate> mappingCoordinate(List<String> coordinateValues) {
-        return coordinateValues.stream()
-                .map(Coordinate::new)
-                .collect(Collectors.toList());
+    public Coordinates(List<Coordinate> coordinates) {
+        this.coordinates = coordinates;
     }
 
     public boolean isContainCoordinate(Coordinate coordinate) {

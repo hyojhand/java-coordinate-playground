@@ -21,7 +21,7 @@ class FigureMatchTest {
     @Test
     @DisplayName("해당 도형 타입에 맞는 구현 클래스 반환 테스트")
     void figureMatch_CreateFigure_Test() {
-        Coordinates coordinates = new Coordinates(List.of("1,2", "2,3"));
+        Coordinates coordinates = new Coordinates(List.of(new Coordinate(1, 2), new Coordinate(2, 3)));
         Figure figure = FigureMatch.LINE.create(coordinates);
         assertThat(figure).isInstanceOf(Line.class);
     }

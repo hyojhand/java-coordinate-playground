@@ -51,7 +51,7 @@ public class OutputView {
     }
 
     private String containCoordinate(Coordinates coordinates, int x, int y) {
-        if (coordinates.isContainCoordinate(new Coordinate(x + Coordinate.DELIMITER + y))) {
+        if (coordinates.isContainCoordinate(new Coordinate(x, y))) {
             return COORDINATE_MARK;
         }
 
