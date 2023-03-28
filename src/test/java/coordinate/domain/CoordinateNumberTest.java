@@ -27,8 +27,8 @@ class CoordinateNumberTest {
     }
 
     @Test
-    @DisplayName("좌표값 빼기 테스트")
-    void coordinateNumber_Minus_Test() {
-        assertThat(CoordinateNumber.from(2).minus(CoordinateNumber.from(1))).isEqualTo(1);
+    @DisplayName("좌표값 차이의 제곱값 테스트")
+    void coordinateNumber_DifferenceSquare_Test() {
+        assertThat(CoordinateNumber.from(2).differenceSquare(CoordinateNumber.from(4))).isEqualTo(4);
     }
 }

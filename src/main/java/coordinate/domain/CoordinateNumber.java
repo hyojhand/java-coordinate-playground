@@ -27,8 +27,12 @@ public class CoordinateNumber {
         return COORDINATE_NUMBERS.get(number);
     }
 
-    public int minus(CoordinateNumber otherCoordinateNumber) {
-        return number - otherCoordinateNumber.number;
+    public double differenceSquare(CoordinateNumber otherCoordinateNumber) {
+        return Math.pow(difference(otherCoordinateNumber.number), 2);
+    }
+
+    private double difference(int otherNumber) {
+        return number - otherNumber;
     }
 
     private static boolean isOutOfRange(int number) {

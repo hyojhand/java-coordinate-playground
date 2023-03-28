@@ -28,7 +28,7 @@ public class Coordinate {
     }
 
     public double calculateDistance(Coordinate otherCoordinate) {
-        return Math.sqrt(Math.pow(x.minus(otherCoordinate.x), 2) + Math.pow(y.minus(otherCoordinate.y), 2));
+        return Math.sqrt(x.differenceSquare(otherCoordinate.x) + y.differenceSquare(otherCoordinate.y));
     }
 
     @Override
