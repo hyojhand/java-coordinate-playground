@@ -5,7 +5,8 @@ import java.util.function.Function;
 
 public enum FigureMatch {
 
-    LINE(Line.COORDINATE_SIZE, Line::new);
+    LINE(Line.COORDINATE_SIZE, Line::new),
+    RECTANGLE(Rectangle.COORDINATE_SIZE, Rectangle::new);
 
     private final int coordinateSize;
     private final Function<Coordinates, Figure> figure;

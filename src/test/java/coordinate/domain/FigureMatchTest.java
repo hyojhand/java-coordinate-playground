@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class FigureMatchTest {
 
     @ParameterizedTest
-    @CsvSource(value = {"2:LINE"}, delimiter = ':')
+    @CsvSource(value = {"2:LINE", "4:RECTANGLE"}, delimiter = ':')
     @DisplayName("좌표 개수에 맞는 도형 타입 테스트")
     void figureMatch_Match_Test(int coordinatesSize, FigureMatch expect) {
         assertThat(FigureMatch.matchFigure(coordinatesSize)).isEqualTo(expect);
