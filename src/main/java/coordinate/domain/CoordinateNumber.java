@@ -27,8 +27,8 @@ public class CoordinateNumber {
         return COORDINATE_NUMBERS.get(number);
     }
 
-    public int minus(CoordinateNumber otherCoordinateNumber) {
-        return number - otherCoordinateNumber.number;
+    public Delta getDelta(CoordinateNumber otherCoordinateNumber) {
+        return new Delta(number - otherCoordinateNumber.number);
     }
 
     private static boolean isOutOfRange(int number) {

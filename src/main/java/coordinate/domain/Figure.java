@@ -6,7 +6,11 @@ public abstract class Figure {
 
     final Coordinates coordinates;
 
-    public Figure(Coordinates coordinates) {
+    public Figure(Coordinates coordinates, int expectSize) {
+        if (expectSize != coordinates.getCoordinateSize()) {
+            throw new IllegalArgumentException("좌표의 개수가 잘못되었습니다");
+        }
+
         this.coordinates = coordinates;
     }
 

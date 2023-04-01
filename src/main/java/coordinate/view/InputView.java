@@ -10,19 +10,19 @@ public class InputView {
     private static final String END_COORDINATE_SIGN = ")";
     private static final String COORDINATE_DELIMITER = "-";
 
-    public List<String> inputCoordinates() {
+    public Set<String> inputCoordinates() {
         System.out.println("좌표를 입력하세요.");
         Set<String> coordinates = Arrays.stream(inputValue().split(COORDINATE_DELIMITER))
                 .collect(Collectors.toSet());
         return extractCoordinates(coordinates);
     }
 
-    private List<String> extractCoordinates(Set<String> coordinates) {
+    private Set<String> extractCoordinates(Set<String> coordinates) {
         return coordinates.stream()
                 .filter(coordinate -> coordinate.startsWith(START_COORDINATE_SIGN) &&
                         coordinate.endsWith(END_COORDINATE_SIGN))
                 .map(coordinate -> coordinate.substring(1, coordinate.length() - 1))
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 
     private String inputValue() {
