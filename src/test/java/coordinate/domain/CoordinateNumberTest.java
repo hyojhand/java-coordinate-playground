@@ -27,8 +27,8 @@ class CoordinateNumberTest {
     }
 
     @Test
-    @DisplayName("좌표값 차이의 제곱값 테스트")
-    void coordinateNumber_DifferenceSquare_Test() {
-        assertThat(CoordinateNumber.from(2).differenceSquare(CoordinateNumber.from(4))).isEqualTo(4);
+    @DisplayName("좌표값 변화량 테스트")
+    void coordinateNumber_GetDelta_Test() {
+        assertThat(CoordinateNumber.from(4).getDelta(CoordinateNumber.from(2))).isEqualTo(new Delta(2));
     }
 }
