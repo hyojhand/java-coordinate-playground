@@ -9,6 +9,7 @@ import coordinate.view.OutputView;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class CoordinateController {
@@ -32,7 +33,7 @@ public class CoordinateController {
         outputView.printResult(coordinates.getCoordinateSize(), figure.calculateArea());
     }
 
-    private List<Coordinate> mappingCoordinate(List<String> coordinateValues) {
+    private List<Coordinate> mappingCoordinate(Set<String> coordinateValues) {
         return coordinateValues.stream()
                 .map(value -> {
                     List<Integer> numbers = splitNumbers(value);
