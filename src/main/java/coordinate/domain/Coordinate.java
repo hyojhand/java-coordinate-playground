@@ -17,7 +17,11 @@ public class Coordinate {
     }
 
     public double calculateDistance(Coordinate otherCoordinate) {
-        return Math.sqrt(x.differenceSquare(otherCoordinate.x) + y.differenceSquare(otherCoordinate.y));
+        return Math.sqrt(x.getDelta(otherCoordinate.x).square() + y.getDelta(otherCoordinate.y).square());
+    }
+
+    public Delta calculateDelta(Coordinate otherCoordinate) {
+        return x.getDelta(otherCoordinate.x).sum(y.getDelta(otherCoordinate.y));
     }
 
     @Override

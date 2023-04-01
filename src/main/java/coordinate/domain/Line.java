@@ -10,7 +10,6 @@ public class Line extends Figure {
 
     @Override
     public double calculateArea() {
-        return coordinates.getCoordinateIndexOf(0)
-                .calculateDistance(coordinates.getCoordinateIndexOf(1));
+        return coordinates.getIndexDistance(0, 1);
     }
 }
